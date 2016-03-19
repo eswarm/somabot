@@ -28,7 +28,7 @@ def read_ingredients(in_location) :
             print key + " " + str(in_json[key])
 
 def read_drinks(json_location):
-    drinks = {}
+    g_drinks = {}
     all_drinks = []
     with open(json_location) as json_file:
         json_drinks = json.load(json_file)
@@ -50,12 +50,12 @@ def read_drinks(json_location):
                     print "Failed at " + name
             drinks[name] = Drink(name, glass, category, ingredients)
             all_drinks.append(drinks)
-        print drinks[name]
+        #print drinks[name]
     return all_drinks
 
 def make_drink(name):
-    Drink d = drink["name"]
-    ingredients = d.ingredients
+    drink = g_drinks["name"]
+    ingredients = drink.ingredients
     pump_time = []
     for ing in ingredients :
         if ing not in g_ingredients :
@@ -74,7 +74,7 @@ def make_drink(name):
 
     for i in range(len(pump_time)) :
         enable_pump(i, pump_time[i])
-            
+
 """
 Read the list of pump mappings
 """
@@ -83,8 +83,3 @@ def read_pump_mapping():
     pump_mapping = pickle.load(pkled_data)
     g_ingredients = pump_mapping
     # show error here
-
-
-if __name__ == "__main__" :
-    #read_ingredients("ingredients.json")
-    read_drinks("recipes.json")
