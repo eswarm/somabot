@@ -57,14 +57,24 @@ def make_drink(name):
     Drink d = drink["name"]
     ingredients = d.ingredients
     pump_time = []
-    for i in ingredients :
-        pump_no = -1
+    for ing in ingredients :
+        if ing not in g_ingredients :
+            return False
+        pump_no = 0
         for g_i in g_ingredients :
-            if ingredients.name == g_i :
-                
+            if ing.name == g_i :
+                break
             pump_no += 1
-        if i.unit == CL :
+        ml = 0;
+        if ing.unit == CL :
+            ml = ing.amount * 10
+        else :
+            ml = ing.amount
+        pump_time.append(ing.amount/FLOW_RATE)
 
+    for i in range(len(pump_time)) :
+        enable_pump(i, pump_time[i])
+            
 """
 Read the list of pump mappings
 """
