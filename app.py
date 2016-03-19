@@ -17,7 +17,8 @@ def index():
     possible = json.loads(p.read())
 
     print(ingredients_list, file=sys.stderr)
-
+    possible_ingredients = []
+    
     for p in possible.keys():
         possible_ingredients.append(p)
 
