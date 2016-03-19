@@ -18,8 +18,8 @@ def index():
 
     print(ingredients_list, file=sys.stderr)
 
-    for p in possible:
-        possible_ingredients.append(p.key())
+    for p in possible.keys():
+        possible_ingredients.append(p)
 
     all_drinks = read_drinks("recipes.json")
 
@@ -33,7 +33,7 @@ def index():
         if (add_drink):
             possible_drinks.append(drink)
 
-    return render_template('index.html', possible_drinks = possible_drinks, 
+    return render_template('index.html', possible_drinks = possible_drinks,
         ingredients_list = ingredients_list, possible_ingredients = possible_ingredients)
 
 @app.route('/settings')
