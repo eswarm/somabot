@@ -1,0 +1,9 @@
+<!doctype html>
+<title>BarBot</title>
+{% if drink == '1'%}
+  <h1>You selected Margarita</h1>
+{% elif drink == '2'%}
+  <h1>You selected Screwdriver</h1>
+{% else %}
+  <h1> Select a drink </h1>
+{% endif %}

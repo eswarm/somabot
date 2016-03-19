@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BarBot</title>
+    <!-- Latest compiled and minified CSS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="static/index.js"/></script>
+
+    <link rel="stylesheet" type="text/css" href="static/index.css">
+</head>
+
+<body>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2>Select your ingredients in order</h2>
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <fieldset>
+                    <div class="form-group">
+                        {% set i = 0 %}
+                        {% for ingredient in ingredients_list%}
+                        <label class="row-sm-2 control-label">Pump {{ x }}</label>
+                        <div class="row-sm-3">
+                            <select class="form-control" id="option_{{i}}">
+                                {% for item in possible_ingredients %}
+                                {% if item == ingredient %}
+                                <option value="{{item}}" selected>{{item}}</option>
+                                {% else %}
+                                <option value="{{item}}">{{item}}</option>
+                                {% endif %}
+                                {% endfor %}
+                                {% set i = i + 1 %}
+                            </select>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="confirm">Confirm</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+        <!--
+        {% if drink == '1'%}
+        <h3>You selected Margarita</h3>
+        {% elif drink == '2'%}
+        <h3>You selected Screwdriver</h3>
+        {% elif drink == '3'%}
+        <h3>You selected Bloody Mary</h3>
+        {% elif drink == None %}
+        <h3>Select a drink</h3>
+        {% else %}
+        <h3>Invalid Selection</h3>
+        {% endif %}
+    -->
+        <div class="panel-group">
+            
+            {% for item in possible_drinks%}
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <a href="javascript:void()" id="{{ item['name'] }}" class="drink-name" onclick="doAjax(this)">{{item['name']}}</a>
+                </div>
+                <div class="panel-body">
+                    {{item['description']}}
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+
+        <button id="myBtn" class="btn btn-warning">Settings</button>
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+
+    </div>
+</body>
