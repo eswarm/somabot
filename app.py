@@ -18,8 +18,8 @@ def index():
 
     print(ingredients_list, file=sys.stderr)
 
-    for p in possible:
-        possible_ingredients.append(p.key())
+    for p in possible.keys():
+        possible_ingredients.append(p)
 
     all_drinks = read_drinks("recipes.json")
 
