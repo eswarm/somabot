@@ -33,7 +33,7 @@ def index():
         if (add_drink):
             possible_drinks.append(drink)
 
-    return render_template('index.html', possible_drinks = possible_drinks, 
+    return render_template('index.html', possible_drinks = possible_drinks,
         ingredients_list = ingredients_list, possible_ingredients = possible_ingredients)
 
 @app.route('/settings')
