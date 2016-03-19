@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import json
 import pickle
-import drink
+from drink import *
 
 app = Flask(__name__)
 

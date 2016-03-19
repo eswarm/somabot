@@ -48,7 +48,7 @@ def read_drinks(json_location):
                     ingredients.append(Ingredient(unit,amount,ingredient_type))
                 except :
                     print "Failed at " + name
-            drinks[name] = Drink(name, glass, category, ingredients)
+            g_drinks[name] = Drink(name, glass, category, ingredients)
             all_drinks.append(drinks)
         #print drinks[name]
     return all_drinks
