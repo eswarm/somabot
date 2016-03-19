@@ -3,6 +3,7 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import json
 import pickle
+import drink
 
 app = Flask(__name__)
 
@@ -12,17 +13,22 @@ def index():
     drinks_json = json.loads(f.read())
     f = open("ingredients", "rb")
     ingredients_list = pickle.load(f)
+    p = open("ingredients.json", "r")
+    possible = json.loads(p.read())
 
     print(ingredients_list, file=sys.stderr)
 
-    possible_ingredients = ["Apple Juice", "Vodka", "Orange Juice", "Gin", "Whisky", "Schnapps", "Rum", "Lemon Juice", "Tomato Juice"]
+    for p in possible:
+        possible_ingredients.append(p.key())
+
+    all_drinks = read_drinks("recipes.json")
 
     possible_drinks = []
 
-    for drink in drinks_json["drinks"]:
+    for drink in all_drinks:
         add_drink = True
-        for ingredient in drink["ingredients"]:
-            if (ingredient not in ingredients_list):
+        for ingredient in drink.ingredients:
+            if (ingredient.ingredient_name not in ingredients_list):
                 add_drink = False
         if (add_drink):
             possible_drinks.append(drink)

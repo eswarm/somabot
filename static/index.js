@@ -41,6 +41,7 @@ function confirmClicked() {
 		type: 'GET',
 		success: function(response) {
 			console.log(response);
+			window.location.reload(true);
 		},
 		error: function(error) {
 			console.log(error);

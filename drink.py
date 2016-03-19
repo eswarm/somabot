@@ -29,6 +29,7 @@ def read_ingredients(in_location) :
 
 def read_drinks(json_location):
     drinks = {}
+    all_drinks = []
     with open(json_location) as json_file:
         json_drinks = json.load(json_file)
         for json_drink in json_drinks :
@@ -48,7 +49,9 @@ def read_drinks(json_location):
                 except :
                     print "Failed at " + name
             drinks[name] = Drink(name, glass, category, ingredients)
+            all_drinks.append(drinks)
         print drinks[name]
+    return all_drinks
 
 def make_drink(name):
     Drink d = drink["name"]
