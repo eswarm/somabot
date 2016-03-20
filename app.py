@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import json
 import pickle
-from drink import *
+import drink as D 
 
 app = Flask(__name__)
 
@@ -22,7 +22,9 @@ def index():
     for p in possible.keys():
         possible_ingredients.append(p)
 
-    all_drinks = read_drinks("recipes.json")
+    all_drinks = D.read_drinks("recipes.json")
+
+    D.read_pump_mapping() 
 
     possible_drinks = []
 
@@ -33,6 +35,7 @@ def index():
                 add_drink = False
         if (add_drink):
             possible_drinks.append(drink)
+    print (possible_drinks[0].name, file=sys.stderr)
 
     return render_template('index.html', possible_drinks = possible_drinks,
         ingredients_list = ingredients_list, possible_ingredients = possible_ingredients)
@@ -49,9 +52,10 @@ def settings():
 @app.route('/make_drink')
 def make_drink():
     print (request.args.get('name'), file=sys.stderr)
+    D.make_drink(request.args.get('name')) 
     return jsonify(result=0)
 
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
