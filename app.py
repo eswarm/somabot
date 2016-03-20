@@ -35,8 +35,11 @@ def index():
                 add_drink = False
         if (add_drink):
             possible_drinks.append(drink)
-    print (possible_drinks[0].name, file=sys.stderr)
-
+    #print (possible_drinks[0].name, file=sys.stderr)
+    
+    possible_drinks.sort(key=lambda x: x.name)
+    #print (possible_ingredients, file=sys.stderr)
+    possible_ingredients.sort()
     return render_template('index.html', possible_drinks = possible_drinks,
         ingredients_list = ingredients_list, possible_ingredients = possible_ingredients)
 
@@ -52,6 +55,8 @@ def settings():
 @app.route('/make_drink')
 def make_drink():
     print (request.args.get('name'), file=sys.stderr)
+    timestampId = request.args.get('timestamp')
+    print(timestampId, file=sys.stderr)
     D.make_drink(request.args.get('name')) 
     return jsonify(result=0)
 

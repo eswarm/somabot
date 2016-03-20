@@ -11,25 +11,26 @@
         "ingredient": "Vodka" },
       { "unit": "cl",
         "amount": 0.75,
-        "ingredient": "Lillet Blonde" }
+        "ingredient": "Orange juice" }
     ],
     "garnish": "Lemon twist",
     "preparation": "Shake and strain into a chilled cocktail glass." },
+    
   { "name": "Bacardi",
     "glass": "martini",
     "category": "Before Dinner Cocktail",
     "ingredients": [
       { "unit": "cl",
         "amount": 4.5,
-        "ingredient": "White rum",
+        "ingredient": "Orange juice",
         "label": "Bacardi White Rum" },
       { "unit": "cl",
         "amount": 2,
-        "ingredient": "Lime juice" },
+        "ingredient": "Gin" },
       { "unit": "cl",
         "amount": 1,
-        "ingredient": "Syrup",
-        "label": "Grenadine" }
+        "ingredient": "",
+        "label": "Vodka" }
     ],
     "preparation": "Shake with ice cubes. Strain into chilled cocktail glass." },
   { "name": "Negroni",
@@ -54,10 +55,10 @@
     "ingredients": [
       { "unit": "cl",
         "amount": 2,
-        "ingredient": "Kirsch" },
+        "ingredient": "Campari" },
       { "unit": "cl",
         "amount": 4,
-        "ingredient": "Vermouth",
+        "ingredient": "Gin",
         "label": "Dry vermouth" },
       { "special": "3 dashes Strawberry syrup" }
     ],
@@ -100,7 +101,7 @@
     "ingredients": [
       { "unit": "cl",
         "amount": 4,
-        "ingredient": "White rum",
+        "ingredient": "Orange juice",
         "label": "White Cuban Rum" },
       { "unit": "cl",
         "amount": 3,
@@ -1192,7 +1193,7 @@
         "label": "Old Tom Gin" },
       { "unit": "cl",
         "amount": 1,
-        "ingredient": "Cherry liqueur",
+        "ingredient": "Cognac",
         "label": "Maraschino" },
       { "unit": "cl",
         "amount": 1,
@@ -1277,7 +1278,7 @@
         "ingredient": "Vodka" },
       { "unit": "cl",
         "amount": 1.5,
-        "ingredient": "Galliano" },
+        "ingredient": "Whiskey" },
       { "unit": "cl",
         "amount": 9,
         "ingredient": "Orange juice" }

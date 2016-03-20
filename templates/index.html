@@ -61,29 +61,18 @@
     </div>
 
     <div class="container">
-        <!--
-        {% if drink == '1'%}
-        <h3>You selected Margarita</h3>
-        {% elif drink == '2'%}
-        <h3>You selected Screwdriver</h3>
-        {% elif drink == '3'%}
-        <h3>You selected Bloody Mary</h3>
-        {% elif drink == None %}
-        <h3>Select a drink</h3>
-        {% else %}
-        <h3>Invalid Selection</h3>
-        {% endif %}
-    -->
         <div class="panel-group">
             
-            {% for item in possible_drinks%}
+            {% for item in possible_drinks %}
             <div class="panel panel-primary">
 
                 <div class="panel-heading">
                     <a href="javascript:void()" id="{{ item.name }}" class="drink-name" onclick="doAjax(this)">{{item.name}}</a>
                 </div>
                 <div class="panel-body">
-                    {{item.category}}
+			<b>Category: </b>{{item.category}} <br/>
+			<b>Ingredients: </b>{% for ingr in item.ingredients %} {{ingr.ingredient_name}} {% endfor %}<br/>
+			<b>Preparation: </b>{{item.preparation}} <br/>
                 </div>
             </div> 
             {% endfor %}
