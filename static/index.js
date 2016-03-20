@@ -12,7 +12,8 @@ $(function() {
 });
 */
 function doAjax(arg) {
-	var payload = "name="+arg.id;
+	console.log(localStorage.getItem("timestamp"));
+	var payload = "name="+arg.id+"&id="+localStorage.getItem("timestamp");
     $.ajax({
         url: '/make_drink',
         data: payload,
@@ -24,6 +25,11 @@ function doAjax(arg) {
             console.log(error);
         }
     });
+}
+
+if (localStorage.getItem("timestamp") === null) {
+	localStorage.setItem("timestamp", new Date().getTime());
+	console.log(localStorage.getItem("timestamp"));
 }
 
 function confirmClicked() {

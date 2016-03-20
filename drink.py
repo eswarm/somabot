@@ -5,7 +5,7 @@ CL = "cl"
 ML = "ml"
 g_drinks = {}
 #in ml per second
-FLOW_RATE = 1
+FLOW_RATE = 0.3
 g_ingredients = []
 last_drink = None
 btn_thread1 = None
@@ -19,11 +19,12 @@ class Ingredient:
         self.ingredient_name = ingredient_name
 
 class Drink :
-    def __init__(self, name, glass, category, ingredients):
+    def __init__(self, name, glass, category, ingredients, preparation):
         self.name = name
         self.glass = glass
         self.category = category
         self.ingredients = ingredients
+        self.preparation = preparation
 
 def read_ingredients(in_location) :
     with open(in_location) as in_file:
@@ -43,6 +44,7 @@ def read_drinks(json_location):
             glass = json_drink.get("glass" , "any")
             category = json_drink.get("category" , "none")
             ingredients_json = json_drink["ingredients"]
+            preparation = json_drink.get("preparation", "No preparation")
             ingredients = []
             for ingredient in ingredients_json :
                 if "special" in ingredient :
@@ -54,7 +56,7 @@ def read_drinks(json_location):
                     ingredients.append(Ingredient(unit,amount,ingredient_type))
                 except :
                     print "Failed at " + name
-            d = Drink(name, glass, category, ingredients)
+            d = Drink(name, glass, category, ingredients, preparation)
             g_drinks[name] = d
             all_drinks.append(d)
         #print drinks[name]

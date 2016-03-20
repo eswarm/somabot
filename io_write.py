@@ -6,6 +6,7 @@ pump_running = False
 GPIO_BTN1 = 5
 GPIO_BTN2 = 6
 LEDOn = False
+RELAY_FACTOR = 0.6
 
 """
 Enable pump_no for time_interval seconds
@@ -19,7 +20,7 @@ def enable_pump(pump_no, time_interval) :
     x = mraa.Gpio(GPIO[pump_no])
     x.dir(mraa.DIR_OUT)
     x.write(1)
-    time.sleep(time_interval)
+    time.sleep(time_interval + RELAY_FACTOR)
     x.write(0)
     pump_running = False
 
