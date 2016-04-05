@@ -1,0 +1,25 @@
+<div ng-controller="RecipeCtrl">
+
+<h2 ng-show="recipes.length == 0">
+  No recipes found with these ingredients, add your own
+</h2>
+
+<md-card ng-repeat="recipe in recipes">
+   <md-card-title>
+     <md-card-title-text>
+       <span class="md-headline"> Cocktail </span>
+       <span class="md-subhead"> </span>
+     </md-card-title-text>
+   </md-card-title>
+   <md-card-content>
+     <ul>
+       <li> Vodka </li>
+       <li> Sprite </li>
+     </ul>
+  </md-card-content>
+   <md-card-actions layout="row" layout-align="end center">
+     <md-button>Order</md-button>
+   </md-card-actions>
+ </md-card>
+
+</div>

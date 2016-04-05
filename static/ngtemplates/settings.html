@@ -1,0 +1,78 @@
+
+    <div ng-controller="SettingsCtrl">
+
+      <form ng-submit="save_settings()">
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+           Pump 1
+        </div>
+        <div>
+        <md-select name="pump1" placeholder="Select Ingredient" ng-model="setting.pump1">
+          <md-option ng-value="ingredient" ng-repeat="ingredient in ingredients">{{ingredient}}</md-option>
+        </md-select>
+        </div>
+      </div>
+
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+           Pump 2
+        </div>
+        <div>
+        <md-select name="pump2" placeholder="Select Ingredient" ng-model="setting.pump2">
+          <md-option ng-value="ingredient" ng-repeat="ingredient in ingredients">{{ingredient}}</md-option>
+        </md-select>
+        </div>
+      </div>
+
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+           Pump 3
+        </div>
+        <div>
+        <md-select name="pump3" placeholder="Select Ingredient" ng-model="setting.pump3">
+          <md-option ng-value="ingredient" ng-repeat="ingredient in ingredients">{{ingredient}}</md-option>
+        </md-select>
+        </div>
+      </div>
+
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+           Pump 4
+        </div>
+        <div>
+        <md-select name="pump4" placeholder="Select Ingredient" ng-model="setting.pump4">
+          <md-option ng-value="ingredient" ng-repeat="ingredient in ingredients">{{ingredient}}</md-option>
+        </md-select>
+        </div>
+      </div>
+
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+           Pump 5
+        </div>
+        <div>
+        <md-select name="pump5" placeholder="Select Ingredient" ng-model="setting.pump5">
+          <md-option ng-value="ingredient" ng-repeat="ingredient in ingredients">{{ingredient}}</md-option>
+        </md-select>
+        </div>
+      </div>
+
+      <div class="setting-row" layout="row" layout-align="space-between center" >
+        <div layout="col">
+          <label> Flow rate </label>
+        </div>
+        <div layout="col">
+        <md-input-container class="md-block">
+          <label> ML per second </label>
+          <input name="flow_rate" type="number" ng-model="setting.flow_rate" required>
+        </md-input-container>
+        </div>
+      </div>
+
+      <div layout="row" layout-align="center center">
+      <md-button class="md-raised md-primary" type="submit"> Save </md-button>
+      </div>
+
+    </form>
+
+    </div>
