@@ -11,3 +11,18 @@
 md-card {
   min-width: 200px;
 }
+
+md-card md-card-title {
+	-webkit-flex: 0;
+	-ms-flex: 0;
+	flex: 0;
+  background-color: #3F51B5;
+  color : #FFFFFF;
+}
+
+.expand {
+   display: flex;
+  -webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}

@@ -1,6 +1,14 @@
 
 
 var somabot = angular.module('Somabot', ['ngMaterial', 'ngRoute']);
+
+/*
+somabot.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .dark();
+});
+*/
+
 somabot.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.

@@ -4,6 +4,8 @@
   No recipes found with these ingredients, add your own
 </h2>
 
+ <md-progress-linear md-mode="indeterminate" ng-show="pumping" class="md-accent"></md-progress-linear>
+
 
 <div layout="row" layout-xs="column" layout-sm="column" layout-wrap>
 <md-card ng-repeat="drink in drinks">
@@ -14,12 +16,26 @@
      </md-card-title-text>
    </md-card-title>
    <md-card-content>
+     <md-list>
+     <md-list-item  ng-repeat="ingredient in drink.ingredients" class="md-2-line">
+          <div class="md-list-item-text" layout="column">
+            <h3>  {{ ingredient.ingredient_name }} </h3>
+            <h4> {{ ingredient.amount + " ml"}}   </h4>
+          </div>
+      </md-list-item>
+      <!--
+      <md-divider ></md-divider>
+    -->
+    </md-list>
+    <!--
      <ul>
        <li ng-repeat="ingredient in drink.ingredients"> {{ ingredient.ingredient_name + " " + ingredient.amount + " ml "  }}</li>
      </ul>
+   -->
   </md-card-content>
+  <div class="expand"></div>
    <md-card-actions layout="row" layout-align="end center">
-     <md-button ng-disabled="pumping" class="md-raised md-primary" ng-click="make_drink(drink.name)">Order</md-button>
+     <md-button ng-disabled="pumping" class="md-raised md-accent" ng-click="make_drink(drink.name)">Order</md-button>
    </md-card-actions>
  </md-card>
 </div>

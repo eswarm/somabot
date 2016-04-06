@@ -99,7 +99,6 @@ def get_drinks():
     possible_drinks = []
 
     for d in all_drinks:
-        print(d)
         add_drink = True
         for ingredient in all_drinks[d].ingredients:
             if ingredient.ingredient_name not in c_ing:
