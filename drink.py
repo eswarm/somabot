@@ -1,7 +1,7 @@
 import json, time 
 from json import JSONEncoder
 
-TEST_MODE = True
+TEST_MODE = False
 
 if TEST_MODE :
     def enable_pump(pump_no, time_interval) :

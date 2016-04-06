@@ -1,5 +1,5 @@
 import mraa, time, pickle
-import pyupm_grove as grove
+#import pyupm_grove as grove
 
 GPIO = [10,12,14,16,18]
 pump_running = False
