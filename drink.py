@@ -1,20 +1,24 @@
-import json, pickle
+import json, time 
+from json import JSONEncoder
+
 TEST_MODE = True
 
 if TEST_MODE :
     def enable_pump(pump_no, time_interval) :
         print " pump " + str(pump_no) + " time " + str(time_interval)
+        time.sleep(time_interval)
 else :
     from io_write import *
 
 CL = "cl"
 ML = "ml"
-FLOW_RATE = 0.3
 
+class DrinkEncoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
 
 class Ingredient:
-    def __init__(self, unit, amount, ingredient_name):
-        self.unit = unit
+    def __init__(self, amount, ingredient_name):
         self.amount = amount
         self.ingredient_name = ingredient_name
 
@@ -26,18 +30,10 @@ class Drink :
         self.ingredients = ingredients
         self.preparation = preparation
 
-class Settings :
-    def __init__(self, ingredients, flow_rate ):
-        self.ingredients = ingredients
-        self.flow_rate = flow_rate
+    def to_JSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+            sort_keys=True, indent=4)
 
-def read_settings(settings_file):
-    settings = pickle.load(settings_file)
-    return settings
-
-def write_settings(settings):
-    with open('settings.pickle', 'wb') as f:
-        pickle.dump(settings, f)
 
 def read_ingredients(ing_file):
     ing = json.load(ing_file)
@@ -61,43 +57,16 @@ def read_drinks(json_file):
             try :
                 unit = ingredient["unit"]
                 amount = ingredient["amount"]
+                if unit == CL :
+                    amount = amount * 10
                 ingredient_type = ingredient["ingredient"]
-                ingredients.append(Ingredient(unit,amount,ingredient_type))
+                ingredients.append(Ingredient(amount,ingredient_type))
             except :
                 print "Failed at " + name
         d = Drink(name, glass, category, ingredients, preparation)
         drinks[name] = d
     #print drinks[name]
     return drinks
-
-def make_drink(name):
-    print g_drinks.keys()
-    drink = g_drinks[name]
-    ingredients = drink.ingredients
-    pump_time = []
-    print g_ingredients
-    for ing in ingredients :
-        if ing.ingredient_name not in g_ingredients :
-            print
-            print ing.ingredient_name + " Error : returning .. "
-            return False
-        pump_no = 0
-        for g_i in g_ingredients :
-            if ing.ingredient_name == g_i :
-                break
-            pump_no += 1
-        ml = 0;
-        if ing.unit == CL :
-            ml = ing.amount * 10
-        else :
-            ml = ing.amount
-        pump_time.append(ing.amount/FLOW_RATE)
-
-    print pump_time
-    start_progress()
-    for i in range(len(pump_time)) :
-        enable_pump(i, pump_time[i])
-    stop_progress()
 
 """
 Read the list of pump mappings

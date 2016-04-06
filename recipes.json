@@ -15,21 +15,21 @@
     ],
     "garnish": "Lemon twist",
     "preparation": "Shake and strain into a chilled cocktail glass." },
-    
+
   { "name": "Bacardi",
     "glass": "martini",
     "category": "Before Dinner Cocktail",
     "ingredients": [
       { "unit": "cl",
         "amount": 4.5,
-        "ingredient": "Orange juice",
+        "ingredient": "White Rum",
         "label": "Bacardi White Rum" },
       { "unit": "cl",
         "amount": 2,
         "ingredient": "Gin" },
       { "unit": "cl",
         "amount": 1,
-        "ingredient": "",
+        "ingredient": "Vodka",
         "label": "Vodka" }
     ],
     "preparation": "Shake with ice cubes. Strain into chilled cocktail glass." },
@@ -58,7 +58,7 @@
         "ingredient": "Campari" },
       { "unit": "cl",
         "amount": 4,
-        "ingredient": "Gin",
+        "ingredient": "Vermouth",
         "label": "Dry vermouth" },
       { "special": "3 dashes Strawberry syrup" }
     ],
@@ -1284,5 +1284,41 @@
         "ingredient": "Orange juice" }
     ],
     "garnish": "Orance slice and a cherry",
-    "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top." }
+    "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top." },
+
+    { "name": "Desi Peg Small",
+      "glass": "Glass that fits",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        { "unit": "cl",
+          "amount": 3,
+          "ingredient": "Whiskey" },
+        { "unit": "cl",
+          "amount": 3,
+          "ingredient": "Soda water" },
+        { "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cola" }
+      ],
+      "garnish": "Pickle",
+      "preparation": "Psst" },
+
+      { "name": "Desi Peg Large",
+        "glass": "Glass that fits",
+        "category": "All Day Cocktail",
+        "ingredients": [
+          { "unit": "cl",
+            "amount": 6,
+            "ingredient": "Whiskey" },
+          { "unit": "cl",
+            "amount": 6,
+            "ingredient": "Soda water" },
+          { "unit": "cl",
+            "amount": 6,
+            "ingredient": "Cola" }
+        ],
+        "garnish": "Pickle",
+        "preparation": "Psst" }
+
+
 ]

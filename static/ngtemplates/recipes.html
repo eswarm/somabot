@@ -4,22 +4,24 @@
   No recipes found with these ingredients, add your own
 </h2>
 
-<md-card ng-repeat="recipe in recipes">
+
+<div layout="row" layout-xs="column" layout-sm="column" layout-wrap>
+<md-card ng-repeat="drink in drinks">
    <md-card-title>
      <md-card-title-text>
-       <span class="md-headline"> Cocktail </span>
-       <span class="md-subhead"> </span>
+       <span class="md-headline"> {{ drink.name }}  </span>
+       <span class="md-subhead"> {{ drink.category }}</span>
      </md-card-title-text>
    </md-card-title>
    <md-card-content>
      <ul>
-       <li> Vodka </li>
-       <li> Sprite </li>
+       <li ng-repeat="ingredient in drink.ingredients"> {{ ingredient.ingredient_name + " " + ingredient.amount + " ml "  }}</li>
      </ul>
   </md-card-content>
    <md-card-actions layout="row" layout-align="end center">
-     <md-button>Order</md-button>
+     <md-button ng-disabled="pumping" class="md-raised md-primary" ng-click="make_drink(drink.name)">Order</md-button>
    </md-card-actions>
  </md-card>
+</div>
 
 </div>

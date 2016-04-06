@@ -5,7 +5,7 @@ GPIO = [13,12,11,10]
 pump_running = False
 GPIO_BTN1 = 5
 GPIO_BTN2 = 6
-RELAY_FACTOR = 0.6
+RELAY_FACTOR = 0
 
 """
 Enable pump_no for time_interval seconds
