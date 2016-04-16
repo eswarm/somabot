@@ -1347,7 +1347,7 @@
         ],
         "garnish": "Pickle",
         "preparation": "Psst" 
-	 }
+	 },
 	 { 
 	 "name": "Flush",
         "glass": "Glass that fits",
@@ -1363,10 +1363,5 @@
             "amount": 4,
             "ingredient": "Water" }
         ],
-         }
-	 
-	 
-        
-        
-
+        }
 ]
