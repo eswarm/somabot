@@ -1330,7 +1330,8 @@
         ],
         "garnish": "None",
         "preparation": "Dont stir" },
-	 { "name": "Naa Peg Large",
+	 { 
+	 "name": "Naa Peg Large",
         "glass": "Glass that fits",
         "category": "All Day Cocktail",
         "ingredients": [
@@ -1345,6 +1346,27 @@
             "ingredient": "Cola" }
         ],
         "garnish": "Pickle",
-        "preparation": "Psst" }
+        "preparation": "Psst" 
+	 }
+	 { 
+	 "name": "Flush",
+        "glass": "Glass that fits",
+        "category": "Clean",
+        "ingredients": [
+          { "unit": "cl",
+            "amount": 4,
+            "ingredient": "Water" },
+          { "unit": "cl",
+            "amount": 4,
+            "ingredient": "Water" },
+          { "unit": "cl",
+            "amount": 4,
+            "ingredient": "Water" }
+        ],
+         }
+	 
+	 
+        
+        
 
 ]
