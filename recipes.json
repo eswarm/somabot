@@ -1363,5 +1363,22 @@
             "amount": 4,
             "ingredient": "Water" }
         ]
-        }
+      },
+      { "name": "Screwdriver 2",
+        "glass": "highball",
+        "category": "All Day Cocktail",
+        "ingredients": [
+          { "unit": "cl",
+            "amount": 4,
+            "ingredient": "Vodka" },
+          { "unit": "cl",
+            "amount": 10,
+            "ingredient": "Orange juice" },
+          { "unit": "cl",
+              "amount": 1,
+              "ingredient": "Lime juice" }
+
+        ],
+        "garnish": "Orange slice",
+        "preparation": "Build into a highball glass filled with ice. Stir gently." }
 ]
