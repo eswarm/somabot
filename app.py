@@ -51,7 +51,17 @@ def get_all_ingredients():
     all_ingredients = drink.read_ingredients(g.ing_file)
     return all_ingredients
 
+def get_pump_no(ing_name):
+    c_ing = read_settings(g.settings_file)["ingredients"]
+    i = 0
+    while i < len(c_ing):
+        if c_ing[i] == ing_name:
+            return i
+        i += 1
+    return -1
+
 def start_drink(name):
+    open_files()
     all_drinks = get_all_drinks()
     if name not in all_drinks :
         return False
@@ -61,21 +71,31 @@ def start_drink(name):
     all_ingredients = get_all_ingredients()
     pump_time = []
     flow_rate = get_flow_rate()
+
+    pump_times = {}
     for ing in ingredients :
         if ing.ingredient_name not in all_ingredients :
             print(ing.ingredient_name + " Error : returning .. ")
             return False
-        pump_no = 0
-        for g_i in all_ingredients :
-            if ing.ingredient_name == g_i :
-                break
-            pump_no += 1
-        pump_time.append(ing.amount/flow_rate)
+        pump_no = get_pump_no(ing.ingredient_name)
+        pump_times[pump_no] = ing.amount/flow_rate
 
-    print(pump_time)
+    """
+    for i in range(5) :
+        for ing in ingredients :
+            if ing.ingredient_name not in all_ingredients :
+                print(ing.ingredient_name + " Error : returning .. ")
+                return False
+            for g_i in all_ingredients :
+                if ing.ingredient_name == g_i :
+                    break
+                pump_no += 1
+            pump_time.append(ing.amount/flow_rate)
+    """
+    print(pump_times)
     start_progress()
-    for i in range(len(pump_time)) :
-        drink.enable_pump(i, pump_time[i])
+    for i in pump_times :
+        drink.enable_pump(i, pump_times[i])
     stop_progress()
     return True
 
@@ -161,6 +181,7 @@ def save_settings():
     return "saved"
 
 def read_settings(settings_file):
+    settings_file.seek(0)
     settings = json.load(settings_file)
     return settings
 
@@ -170,4 +191,4 @@ def write_settings(settings):
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0', port=81)
+    app.run(host='0.0.0.0', port=8000)
