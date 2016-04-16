@@ -1318,7 +1318,33 @@
             "ingredient": "Cola" }
         ],
         "garnish": "Pickle",
-        "preparation": "Psst" }
+        "preparation": "Psst" }, 
 
+	 { "name": "Soda Water",
+        "glass": "Glass that fits",
+        "category": "All Day Cocktail",
+        "ingredients": [
+          { "unit": "cl",
+            "amount": 10,
+            "ingredient": "Soda water" }
+        ],
+        "garnish": "None",
+        "preparation": "Dont stir" },
+	 { "name": "Naa Peg Large",
+        "glass": "Glass that fits",
+        "category": "All Day Cocktail",
+        "ingredients": [
+          { "unit": "cl",
+            "amount": 4,
+            "ingredient": "Whiskey" },
+          { "unit": "cl",
+            "amount": 8,
+            "ingredient": "Soda water" },
+          { "unit": "cl",
+            "amount": 8,
+            "ingredient": "Cola" }
+        ],
+        "garnish": "Pickle",
+        "preparation": "Psst" }
 
 ]
