@@ -29,6 +29,7 @@ http://beagleboard.org/latest-images
 
 Install the following dependencies, 
 
+```
 sudo apt-get install git build-essential swig3.0 python-dev nodejs-dev cmake
 Build and Install mraa
 libmraa is not in apt so we’ll have to compile it from source. Don’t worry, it’s easy:
@@ -38,6 +39,7 @@ cmake .. -DBUILDSWIGNODE=OFF
 make
 make install
 Cd
+```
 
 ```bash sudo ln -s <your install prefix, e.g. /usr>/lib/python2.7/site-packages/* /usr/lib/python2.7/dist-packages ```
 
@@ -57,8 +59,10 @@ Once you got libmraa installed. Test using blink.py to check whether your GPIO p
 
 Run 
 
+```
 pip install flask 
 python app.py 
+```
 
 This will start your server. Access the web server through the ip address on which you are running. 
 
