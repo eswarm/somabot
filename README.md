@@ -13,3 +13,53 @@ The control software is a webserver you can access from any browser. Built to be
 
 If you want to add new recipes, just add new ones to the recipes.json, and the ingredients to ingredients.json they will be populated automatically.
 
+## How to run the software. 
+
+### Prerequistes. 
+
+#### For Intel Edison and Intel Galileo 
+
+If you are using the standard images should work out of the box. 
+
+#### For Beaglebone. 
+
+Get the latest beaglebone debian distribution from 
+
+http://beagleboard.org/latest-images 
+
+Install the following dependencies, 
+
+sudo apt-get install git build-essential swig3.0 python-dev nodejs-dev cmake
+Build and Install mraa
+libmraa is not in apt so we’ll have to compile it from source. Don’t worry, it’s easy:
+git clone https://github.com/intel-iot-devkit/mraa.git
+mkdir mraa/build && cd $_
+cmake .. -DBUILDSWIGNODE=OFF
+make
+make install
+Cd
+
+```bash sudo ln -s <your install prefix, e.g. /usr>/lib/python2.7/site-packages/* /usr/lib/python2.7/dist-packages ```
+
+I am not sure if I got the steps right, but the main reference is this. 
+
+http://iotdk.intel.com/docs/master/mraa/building.html 
+
+And this 
+
+https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison
+
+#### For Raspberry PI look here.     
+
+http://www.elec-tron.org/?p=996
+
+Once you got libmraa installed. Test using blink.py to check whether your GPIO pins are working properly or not. 
+
+Run 
+
+pip install flask 
+python app.py 
+
+This will start your server. Access the web server through the ip address on which you are running. 
+
+
