@@ -1,7 +1,7 @@
 # somabot
 An automated bartender 
 
-[![Somabot](http://img.youtube.com/vi/UCGW6izlHaDcsFTO3NYB4Phg/0.jpg)](http://www.youtube.com/watch?v=UCGW6izlHaDcsFTO3NYB4Phg)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=SUPC4OL6UD4" target="_blank"><img src="http://img.youtube.com/vi/SUPC4OL6UD4/0.jpg" alt="Somabot" width="480" height="360" border="10" /></a>
 
 The hardware interfacing is based on libmraa. You can use this on beaglebone black, Raspberry PI or the intel edison/galileo. 
 
