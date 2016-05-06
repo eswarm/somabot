@@ -1,6 +1,8 @@
 # somabot
 An automated bartender 
 
+[![Somabot](http://img.youtube.com/vi/UCGW6izlHaDcsFTO3NYB4Phg/0.jpg)](http://www.youtube.com/watch?v=UCGW6izlHaDcsFTO3NYB4Phg)
+
 The hardware interfacing is based on libmraa. You can use this on beaglebone black, Raspberry PI or the intel edison/galileo. 
 
 Just select the ingredients in the settings, and the right recipes are populated for generating your cocktails automatically. 
